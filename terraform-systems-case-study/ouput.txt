@@ -1,0 +1,179 @@
+mankhan@mankhan:~/interview/terraform-systems-case-study$ terraform apply
+data.template_file.user-data: Refreshing state...
+data.template_cloudinit_config.user-data: Refreshing state...
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  + aws_elb.elb
+      id:                                     <computed>
+      arn:                                    <computed>
+      availability_zones.#:                   <computed>
+      connection_draining:                    "true"
+      connection_draining_timeout:            "30"
+      cross_zone_load_balancing:              "true"
+      dns_name:                               <computed>
+      health_check.#:                         "1"
+      health_check.0.healthy_threshold:       "2"
+      health_check.0.interval:                "30"
+      health_check.0.target:                  "TCP:80"
+      health_check.0.timeout:                 "5"
+      health_check.0.unhealthy_threshold:     "5"
+      idle_timeout:                           "300"
+      instances.#:                            <computed>
+      internal:                               <computed>
+      listener.#:                             "2"
+      listener.1092403652.instance_port:      "8080"
+      listener.1092403652.instance_protocol:  "http"
+      listener.1092403652.lb_port:            "8080"
+      listener.1092403652.lb_protocol:        "http"
+      listener.1092403652.ssl_certificate_id: ""
+      listener.3057123346.instance_port:      "80"
+      listener.3057123346.instance_protocol:  "http"
+      listener.3057123346.lb_port:            "80"
+      listener.3057123346.lb_protocol:        "http"
+      listener.3057123346.ssl_certificate_id: ""
+      name:                                   "manjurkhan-elb"
+      security_groups.#:                      "1"
+      security_groups.1393303879:             "sg-03e9111b3bb9f8b40"
+      source_security_group:                  <computed>
+      source_security_group_id:               <computed>
+      subnets.#:                              "1"
+      subnets.2971525990:                     "subnet-086f3ed6742f38a16"
+      tags.%:                                 "1"
+      tags.Name:                              "manjurkhan-elb"
+      zone_id:                                <computed>
+
+  + aws_instance.ec2
+      id:                                     <computed>
+      ami:                                    "ami-9887c6e7"
+      arn:                                    <computed>
+      associate_public_ip_address:            <computed>
+      availability_zone:                      <computed>
+      cpu_core_count:                         <computed>
+      cpu_threads_per_core:                   <computed>
+      ebs_block_device.#:                     <computed>
+      ephemeral_block_device.#:               <computed>
+      get_password_data:                      "false"
+      instance_state:                         <computed>
+      instance_type:                          "t2.micro"
+      ipv6_address_count:                     <computed>
+      ipv6_addresses.#:                       <computed>
+      key_name:                               "case-study"
+      network_interface.#:                    <computed>
+      network_interface_id:                   <computed>
+      password_data:                          <computed>
+      placement_group:                        <computed>
+      primary_network_interface_id:           <computed>
+      private_dns:                            <computed>
+      private_ip:                             <computed>
+      public_dns:                             <computed>
+      public_ip:                              <computed>
+      root_block_device.#:                    <computed>
+      security_groups.#:                      <computed>
+      source_dest_check:                      "true"
+      subnet_id:                              "subnet-086f3ed6742f38a16"
+      tags.%:                                 "1"
+      tags.Name:                              "manjurkhan-instance"
+      tenancy:                                <computed>
+      volume_tags.%:                          <computed>
+      vpc_security_group_ids.#:               "1"
+      vpc_security_group_ids.1393303879:      "sg-03e9111b3bb9f8b40"
+
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_instance.ec2: Creating...
+  ami:                               "" => "ami-9887c6e7"
+  arn:                               "" => "<computed>"
+  associate_public_ip_address:       "" => "<computed>"
+  availability_zone:                 "" => "<computed>"
+  cpu_core_count:                    "" => "<computed>"
+  cpu_threads_per_core:              "" => "<computed>"
+  ebs_block_device.#:                "" => "<computed>"
+  ephemeral_block_device.#:          "" => "<computed>"
+  get_password_data:                 "" => "false"
+  instance_state:                    "" => "<computed>"
+  instance_type:                     "" => "t2.micro"
+  ipv6_address_count:                "" => "<computed>"
+  ipv6_addresses.#:                  "" => "<computed>"
+  key_name:                          "" => "case-study"
+  network_interface.#:               "" => "<computed>"
+  network_interface_id:              "" => "<computed>"
+  password_data:                     "" => "<computed>"
+  placement_group:                   "" => "<computed>"
+  primary_network_interface_id:      "" => "<computed>"
+  private_dns:                       "" => "<computed>"
+  private_ip:                        "" => "<computed>"
+  public_dns:                        "" => "<computed>"
+  public_ip:                         "" => "<computed>"
+  root_block_device.#:               "" => "<computed>"
+  security_groups.#:                 "" => "<computed>"
+  source_dest_check:                 "" => "true"
+  subnet_id:                         "" => "subnet-086f3ed6742f38a16"
+  tags.%:                            "" => "1"
+  tags.Name:                         "" => "manjurkhan-instance"
+  tenancy:                           "" => "<computed>"
+  volume_tags.%:                     "" => "<computed>"
+  vpc_security_group_ids.#:          "" => "1"
+  vpc_security_group_ids.1393303879: "" => "sg-03e9111b3bb9f8b40"
+aws_instance.ec2: Still creating... (10s elapsed)
+aws_instance.ec2: Still creating... (20s elapsed)
+aws_instance.ec2: Still creating... (30s elapsed)
+aws_instance.ec2: Creation complete after 33s (ID: i-0238da8c88dc175ed)
+aws_elb.elb: Creating...
+  arn:                                    "" => "<computed>"
+  availability_zones.#:                   "" => "<computed>"
+  connection_draining:                    "" => "true"
+  connection_draining_timeout:            "" => "30"
+  cross_zone_load_balancing:              "" => "true"
+  dns_name:                               "" => "<computed>"
+  health_check.#:                         "" => "1"
+  health_check.0.healthy_threshold:       "" => "2"
+  health_check.0.interval:                "" => "30"
+  health_check.0.target:                  "" => "TCP:80"
+  health_check.0.timeout:                 "" => "5"
+  health_check.0.unhealthy_threshold:     "" => "5"
+  idle_timeout:                           "" => "300"
+  instances.#:                            "" => "1"
+  instances.2917209355:                   "" => "i-0238da8c88dc175ed"
+  internal:                               "" => "<computed>"
+  listener.#:                             "" => "2"
+  listener.1092403652.instance_port:      "" => "8080"
+  listener.1092403652.instance_protocol:  "" => "http"
+  listener.1092403652.lb_port:            "" => "8080"
+  listener.1092403652.lb_protocol:        "" => "http"
+  listener.1092403652.ssl_certificate_id: "" => ""
+  listener.3057123346.instance_port:      "" => "80"
+  listener.3057123346.instance_protocol:  "" => "http"
+  listener.3057123346.lb_port:            "" => "80"
+  listener.3057123346.lb_protocol:        "" => "http"
+  listener.3057123346.ssl_certificate_id: "" => ""
+  name:                                   "" => "manjurkhan-elb"
+  security_groups.#:                      "" => "1"
+  security_groups.1393303879:             "" => "sg-03e9111b3bb9f8b40"
+  source_security_group:                  "" => "<computed>"
+  source_security_group_id:               "" => "<computed>"
+  subnets.#:                              "" => "1"
+  subnets.2971525990:                     "" => "subnet-086f3ed6742f38a16"
+  tags.%:                                 "" => "1"
+  tags.Name:                              "" => "manjurkhan-elb"
+  zone_id:                                "" => "<computed>"
+aws_elb.elb: Creation complete after 3s (ID: manjurkhan-elb)
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+dns_name = manjurkhan-elb-2137272326.us-east-1.elb.amazonaws.com
+key_name = case-study
+public_ip = 35.153.213.155
