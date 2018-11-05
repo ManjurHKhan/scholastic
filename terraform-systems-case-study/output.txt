@@ -128,8 +128,7 @@ aws_instance.ec2: Creating...
   vpc_security_group_ids.1393303879: "" => "sg-03e9111b3bb9f8b40"
 aws_instance.ec2: Still creating... (10s elapsed)
 aws_instance.ec2: Still creating... (20s elapsed)
-aws_instance.ec2: Still creating... (30s elapsed)
-aws_instance.ec2: Creation complete after 33s (ID: i-0238da8c88dc175ed)
+aws_instance.ec2: Creation complete after 22s (ID: i-007dc39a69440b89b)
 aws_elb.elb: Creating...
   arn:                                    "" => "<computed>"
   availability_zones.#:                   "" => "<computed>"
@@ -145,7 +144,7 @@ aws_elb.elb: Creating...
   health_check.0.unhealthy_threshold:     "" => "5"
   idle_timeout:                           "" => "300"
   instances.#:                            "" => "1"
-  instances.2917209355:                   "" => "i-0238da8c88dc175ed"
+  instances.3317381735:                   "" => "i-007dc39a69440b89b"
   internal:                               "" => "<computed>"
   listener.#:                             "" => "2"
   listener.1092403652.instance_port:      "" => "8080"
@@ -168,12 +167,12 @@ aws_elb.elb: Creating...
   tags.%:                                 "" => "1"
   tags.Name:                              "" => "manjurkhan-elb"
   zone_id:                                "" => "<computed>"
-aws_elb.elb: Creation complete after 3s (ID: manjurkhan-elb)
+aws_elb.elb: Creation complete after 4s (ID: manjurkhan-elb)
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-dns_name = manjurkhan-elb-2137272326.us-east-1.elb.amazonaws.com
+dns_name = manjurkhan-elb-1010563948.us-east-1.elb.amazonaws.com
 key_name = case-study
-public_ip = 35.153.213.155
+public_ip = 18.206.93.58
